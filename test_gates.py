@@ -1,5 +1,5 @@
 import unittest
-from main import AND, OR, NOT, NAND, XOR, XNOR
+from digital.gates import AND, OR, NOT, NAND, XOR, XNOR
 
 class TestAND(unittest.TestCase):
 
