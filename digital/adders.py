@@ -1,4 +1,4 @@
-from gates import AND, XOR, OR, NOT
+from .gates import AND, XOR, OR, NOT
 from dataclasses import dataclass
 
 #Reference implementation: http://www.csc.villanova.edu/~mdamian/Past/csc2400fa13/assign/ALU.html
@@ -34,7 +34,7 @@ class FullAdder:
         orResult = OR.logic(firstAdder["carry"], SecondAdder["carry"])
         return {"sum": SecondAdder["sum"], "carry": orResult}
 
-    def __call__(self, a, b, c):
+    def __call__(self, a=None, b=None, c=None):
         A = a if a != None else self.A
         B = b if b != None else self.B
         C = c if c != None else self.C
@@ -90,17 +90,17 @@ class HalfSubstractor:
 
 
 
-ha = HalfAdder()
-print(ha(1,1))
+# ha = HalfAdder()
+# print(ha(1,1))
 
-fa = FullAdder()
-print(fa(1,1,1))
+# fa = FullAdder()
+# print(fa(1,1,1))
 
-a = [1, 1, 1, 1, 1, 1, 1, 1 ]
-b = [1, 1, 1, 1, 1, 1, 1, 1 ]
-print(NBitAdder.logic(a, b, 2))
+# a = [1, 1, 1, 1, 1, 1, 1, 1 ]
+# b = [1, 1, 1, 1, 1, 1, 1, 1 ]
+# print(NBitAdder.logic(a, b, 2))
         
-print(HalfSubstractor.logic(0,0))
-print(HalfSubstractor.logic(0,1))
-print(HalfSubstractor.logic(1,0))
-print(HalfSubstractor.logic(1,1))
+# print(HalfSubstractor.logic(0,0))
+# print(HalfSubstractor.logic(0,1))
+# print(HalfSubstractor.logic(1,0))
+# print(HalfSubstractor.logic(1,1))
