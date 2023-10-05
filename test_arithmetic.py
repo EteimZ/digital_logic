@@ -1,5 +1,5 @@
 import unittest
-from digital.adders import HalfAdder, FullAdder
+from digital.arithmetic import HalfAdder, FullAdder
 
 class TestHalfAdder(unittest.TestCase):
 
