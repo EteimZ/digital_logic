@@ -13,3 +13,30 @@ Other gates which builds upon them have also been implemented like:
 - XNOR
 
 Arithmetic logics are currently being implemented.
+
+## Usage 
+
+To use the logic gates you first have to import your gate of choice.
+
+```python
+from digital.gates import AND
+```
+
+When a gate is imported you can use their functionality via the `logic` static method:
+
+```python
+result = AND.logic(1, 1)
+print(result) # 1
+```
+
+You can also creat an instance of the gate and call the gate instance:
+
+```python
+and = AND(1, 1)
+print(and()) # 1
+```
+
+All gates follow this pattern.
+
+
+

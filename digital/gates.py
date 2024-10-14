@@ -1,10 +1,10 @@
 from dataclasses import dataclass
-from typing import Optional
-from abc import ABC, abstractmethod, abstractstaticmethod
+from abc import ABC, abstractmethod
 
 class GATE(ABC):
-    
-    @abstractstaticmethod
+
+    @staticmethod
+    @abstractmethod
     def logic(self):
         pass
 
@@ -17,6 +17,9 @@ class BIGATE(GATE, ABC):
         A = a if a != None else self.A
         B = b if b != None else self.B
         return self.logic(A, B)
+    
+    def __repr__(self):
+        return f'{self.__class__.__name__}(A={self.A}, B={self.B}, result={self.logic(self.A, self.B)})'
 
 class AND(BIGATE):
    
@@ -41,6 +44,9 @@ class NOT(GATE):
     def __call__(self, a=None):
         A = a if a != None else self.A
         return int(not A)
+    
+    def __repr__(self):
+        return f'{self.__class__.__name__}(A={self.A}, result={self.logic(self.A)})'
 
 class NAND(BIGATE):
 
